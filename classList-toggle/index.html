@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>toggle class</title>
+    <style>
+      button {
+        cursor: pointer;
+        width: 180px;
+        line-height: 3;
+        border: none;
+        outline: none;
+        background-color: #eee;
+        border-radius: 8px;
+      }
+      .highlight {
+        color: slateblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">click</button>
+    <script>
+      const btn = document.querySelector('button');
+      const CLICKED_CL = 'highlight';
+
+      function handleBtn() {
+        btn.classList.toggle(CLICKED_CL);
+
+        if (btn.classList.contains(CLICKED_CL)) {
+          btn.innerHTML = 'Add Highlight';
+        } else {
+          btn.innerHTML = 'Remove Highlight';
+        }
+      }
+      window.onload = function () {
+        btn.addEventListener('click', handleBtn);
+      };
+    </script>
+  </body>
+</html>
